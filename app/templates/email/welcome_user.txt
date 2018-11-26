@@ -1,0 +1,5 @@
+Hello {{user.username}}!
+
+Welcome to our website.
+
+Thank you for signing up. enjoy the services
