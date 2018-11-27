@@ -1,7 +1,40 @@
 {% extends 'base.html' %}
 
+{% block styles %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+
+{% endblock %}
+
+
+
 {% block content %}
 
-<h1>{{record}}</h1>
+<div class="container-fluid">
+  <a class="btn btn-primary btn md" href="/new_patient" >New Patient</a>
 
-{% endblock   %}
+</div>
+{% for patient in patients [::-1] %}
+
+<div class="container-fluid">
+  <div class="card-deck">
+  <div class="card">
+    <div class="card-header" style='text-align:center;'>
+      <h5>{{patient.username}}</h5>
+    </div>
+    <div class="card-body">
+      <p>{{patient.patient}}</p>
+      <a href="/record/{{patient.id}}">View records</a>
+    </div>
+    <div class="card-footer">
+      <div class="container-fluid">
+        <a class="btn btn-primary btn-md" href="/new_record/{{patient.id}}">add record</a>
+      </div>
+    </div>
+  </div>
+  <br>
+</div>
+</div>
+
+{% endfor %}
+{% endblock %}
