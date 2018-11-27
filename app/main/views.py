@@ -5,7 +5,7 @@ from ..models import User,Patient,Record
 # from ..email import mail_message
 from .. import db
 from .. import auth
-from . forms import LoginForm,PatientForm
+from . forms import LoginForm,PatientForm,RecordForm
 # import markdown2
 
 @main.route('/',methods = ['GET','POST'])
@@ -60,3 +60,21 @@ def record(id):
     print(record)
     title = 'patient records'
     return render_template('record.html',title = title, record = record)
+
+
+
+@main.route('/new_record/<int:id>', methods = ['GET', 'POST'])
+def new_record(id):
+    form = RecordForm()
+
+    if form.validate_on_submit():
+        writer = form.docter.data
+        record = form.record.data
+
+        new_record = Record(record = record, patient_id = id, docter= writer)
+        new_record.save_record()
+
+        return redirect(url_for('main.index'))
+
+    title = 'New Record'
+    return render_template('new_record.html', title = title, record_form = form)

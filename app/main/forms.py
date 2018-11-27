@@ -20,7 +20,6 @@ class PatientForm(FlaskForm):
 
 
 class RecordForm(FlaskForm):
-    docter = StringField('Author',validators=[Required()])
+    docter = StringField('Doctor',validators=[Required()])
     record = TextAreaField('Your Record')
     submit = SubmitField('Submit')
-    
