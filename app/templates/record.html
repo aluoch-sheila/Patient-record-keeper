@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for r in record %}
+<div class="container-fluid">
+<div class="card-deck">
+  <div class="card">
+  <div class="card-title">
+    <h5>Doctor: {{r.docter}}</h5>
+  </div>
+  <div class="card-body">
+    <p>{{r.record}}</p>
+  </div>
+</div>
+
+</div>
+</div>
+
+{% endfor %}
+{% endblock %}

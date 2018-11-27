@@ -1,7 +1,7 @@
 from flask import render_template, redirect,url_for,abort
 from flask_login import login_required, current_user
 from . import main
-from ..models import User,Patient
+from ..models import User,Patient,Record
 # from ..email import mail_message
 from .. import db
 from .. import auth
@@ -49,3 +49,14 @@ def new_patient():
 
    title = 'New Patient'
    return render_template('new_patient.html',title = title, patient_form = form)
+
+
+@main.route('/record/<id>')
+def record(id):
+    '''
+    function to return the records
+    '''
+    record = Record.get_record(id)
+    print(record)
+    title = 'patient records'
+    return render_template('record.html',title = title, record = record)

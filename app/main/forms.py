@@ -17,3 +17,10 @@ class LoginForm(FlaskForm):
 class PatientForm(FlaskForm):
     patient = TextAreaField('Patient')
     submit = SubmitField('Submit')
+
+
+class RecordForm(FlaskForm):
+    docter = StringField('Author',validators=[Required()])
+    record = TextAreaField('Your Record')
+    submit = SubmitField('Submit')
+    
