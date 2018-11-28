@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<script>
+    $(document).ready(function () {
+        $('.collapsible').collapsible();
+    });
+</script>
+<a class="waves-effect waves-light btn modal-trigger" style="width:10%;margin-left:75%;font-size:large" href="#modal1">OUR
+    AIM</a>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <a style="margin-left:95%;color:red;font-size:large" href="#!" class="modal-close waves-effect waves-green btn-flat">X</a>
+        <h1 class="animated bounceInDown" style="text-align: center">OUR AIM</h2>
+            <hr>
+
+            <p style="font-size:x-large">To make it easy when it comes to keeping patient's information</p>
+            <p style="font-size:x-large">To provide high level of privacy when it comes to patient's information</p>
+            <p style="font-size:x-large">To ensure the patient's records can be accessed by both the doctor and the
+                patient
+                in question</p>
+            <p style="font-size:x-large">To easen the effort used for searching for the files</p>
+            <p style="font-size:x-large">To make sure the patient's records are available at any given time</p>
+    </div>
+</div>
+
+
+
+<div class="carousel">
+    <a class="carousel-item" style="width:20%" href="#one!"><img src="http://unbounce.com/photos/asthma.jpg">
+        <a class="carousel-item" style="width:20%" href="#two!"><img src="https://img.diytrade.com/cdimg/1956194/28592655/0/1347587901/Free_Shipping_Classic_Hospital_nurse_classic_short-sleeve_uniforms.jpg">
+            <a class="carousel-item" style="width:20%" href="#three!"><img src="http://unbounce.com/photos/tavr.jpg"></a>
+            <a class="carousel-item" style="width:20%" href="#four!"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5WuKypHwMTZpav-oo80rszx3AiOYx6aTs_5lLir5-G9XMNrre">
+                <a class="carousel-item" style="width:20%" href="#five!"><img src="http://classichospitalgoa.co.in/images/ultrasound1.jpg">
+</div>
+<script>
+    $(document).ready(function () {
+        $('.modal').modal();
+        $('.carousel').carousel();
+        autoplay();
+
+        function autoplay(next) {
+            $('.carousel').carousel('next');
+            setTimeout(autoplay, 3600);
+        }
+    });
+</script>
+{% endblock %}

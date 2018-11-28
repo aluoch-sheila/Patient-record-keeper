@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/index.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/animate.css')}}">
+</head>
+
+<body>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h1 class="animated bounceInDown" style="text-align: center">OUR AIM</h2>
+                <hr>
+
+                <p style="font-size:x-large">To make it easy when it comes to keeping patient's information</p>
+                <p style="font-size:x-large">To provide high level of privacy when it comes to patient's information</p>
+                <p style="font-size:x-large">To ensure the patient's records can be accessed by both the doctor and the
+                    patient
+                    in question</p>
+                <p style="font-size:x-large">To easen the effort used for searching for the files</p>
+                <p style="font-size:x-large">To make sure the patient's records are available at any given time</p>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('.modal').modal();
+
+        });
+    </script>
+</body>
+
+</html>

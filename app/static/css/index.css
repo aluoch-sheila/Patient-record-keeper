@@ -1,0 +1,22 @@
+body{
+    background-color:#004d40;
+}
+.brand{
+    font-size: 20px;
+    margin-left: 1100px;
+    background-color: red;
+
+}
+.manage{
+    background-color: red;
+}
+.icon{
+    background-color: blue; 
+}
+li a{
+    display: inline-block;
+    padding: 10px;
+}
+ul span{
+    margin-top:-40px;
+}
