@@ -10,9 +10,7 @@ body{
 .manage{
     background-color: red;
 }
-.icon{
-    background-color: blue; 
-}
+
 li a{
     display: inline-block;
     padding: 10px;
