@@ -1,5 +1,11 @@
-. {
+.toggle-btn {
     margin:0px;
     padding:0px; 
     font-family:sans-serif; 
+}
+#sidebar {
+    position: fixed;
+    width: 200px;;
+    height: 100%;
+    background-image: url("http://www.aimst.edu.my/images/home/faculty/school-of-medicine.jpg")
 }
