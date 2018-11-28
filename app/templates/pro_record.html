@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
-{% extends 'base.html' %}
+
 
 {% block content %}
 
-{% for r in records %}
+{% for r in record %}
 <div class="container-fluid">
 <div class="card-deck">
   <div class="card">
@@ -13,6 +13,7 @@
   </div>
   <div class="card-body">
     <p>{{r.record}}</p>
+    <p>{{r.date_added}}</p>
   </div>
   <div class="card-footer">
     <a href="/del-record/{{r.id}}" style="color:red;">Delete Record</a>

@@ -4,10 +4,11 @@
 
 {% for r in record %}
 <div class="container-fluid">
-<div class="card-deck">
+<div class="card-deck" style="margin-left:100px;margin-right:100px;margin-bottom:20px;">
   <div class="card">
   <div class="card-title">
     <h5>Doctor: {{r.docter}}</h5>
+    <h5>DateTime: {{r.date_added}}</h5>
   </div>
   <div class="card-body">
     <p>{{r.record}}</p>

@@ -15,7 +15,7 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Sign In')
 
 class PatientForm(FlaskForm):
-    patient = TextAreaField('Patient')
+    patient = TextAreaField('Patient No.',validators=[Required()])
     submit = SubmitField('Submit')
 
 

@@ -1,6 +1,7 @@
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
 from . import db, login_manager
+from datetime import datetime
 
 
 class User(UserMixin,db.Model):
@@ -26,16 +27,9 @@ class User(UserMixin,db.Model):
     def verify_password(self,password):
         return check_password_hash(self.pass_secure,password)
 
+
     def __repr__(self):
         return f' {self.username}'
-
-
-
-
-@login_manager.user_loader
-def load_user(user_id):
-    return User.query.get(int(user_id))
-
 
 
 class Patient(db.Model):
@@ -43,7 +37,8 @@ class Patient(db.Model):
     __tablename__ = 'patients'
 
     id = db.Column(db.Integer,primary_key = True)
-    patient = db.Column(db.String)
+    patient = db.Column(db.Integer)
+    date_added = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
 
 
@@ -65,6 +60,7 @@ class Record(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     record = db.Column(db.String)
     docter = db.Column(db.String(255))
+    date_added = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     patient_id = db.Column(db.Integer, db.ForeignKey("patients.id"))
 
     def save_record(self):
@@ -75,3 +71,7 @@ class Record(db.Model):
     def get_record(cls, id):
         record = Record.query.filter_by(patient_id=id).all()
         return record
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))

@@ -10,20 +10,22 @@
 
 {% block content %}
 
-<div class="container-fluid">
+
+<div class="container-fluid"  style="margin-left:200px;margin-right:100px;">
   <a class="btn btn-primary btn md" href="/new_patient" >New Patient</a>
 
 </div>
 {% for patient in patients [::-1] %}
 
 <div class="container-fluid">
-  <div class="card-deck">
+  <div class="card-deck" style="margin-left:200px;margin-right:100px; margin-bottom:30px;">
   <div class="card">
     <div class="card-header" style='text-align:center;'>
       <h5>{{patient.username}}</h5>
     </div>
     <div class="card-body">
       <p>{{patient.patient}}</p>
+      <p>DateTime:{{patient.date_added}}</p>
       <a href="/record/{{patient.id}}">View records</a>
     </div>
     <div class="card-footer">

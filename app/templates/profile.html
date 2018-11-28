@@ -7,28 +7,28 @@
         <h4>{{user.username}}</h4>
       </div>
       <div class="card-body">
-        <p> Edit Patient records</p>
+        <p> Edit Patient Records</p>
       </div>
     </div>
   </div>
-  <!-- {% for patient in patients %}
+  {% for p in patient %}
   <div class="col-md-8">
     <div class="card">
       <div class="card-body">
-        <p>{{patient.patient}}</p>
-        <a href="/pro-record/{{patient.id}}"style="float:right">View patient history</a>
+        <p>{{p.patient}}</p>
+        <a href="/pro-record/{{p.id}}"style="float:right">View records</a>
 
 
-        <a href="/patient/edit/{{patient.id}}"style="text-align: centre;">Edit patient records</a>
+        <a href="/patient/edit/{{p.id}}"style="text-align: centre;">Edit Patient</a>
 
 
 
 
-        <a href="/patient/{{patient.id}}" style="color:red;">Delete Patient</a>
+        <a href="/patient/{{p.id}}" style="color:red;">Delete Patient</a>
       </div>
     </div>
   </div>
-  {% endfor %} -->
+  {% endfor %}
 </div>
 
 
