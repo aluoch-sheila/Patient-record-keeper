@@ -54,6 +54,6 @@ class PatientModelTest(unittest.TestCase):
     #     self.get_patient = Patient.get_patient(1)
     #     self.assertEquals(self.get_patient, [])
     # def test_save_patient(self):
-    #
+    # #
     #     self.new_patient.save_patient()
-    #     self.assertEqual(len(Patient.patient),1)
+    #     self.assertEquals(self.get_patient, [],date_added)

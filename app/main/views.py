@@ -10,12 +10,12 @@ from . forms import LoginForm,PatientForm,RecordForm
 
 @main.route('/',methods = ['GET','POST'])
 @login_required
-def index():
+def register():
     '''
     function that returns the index page
     '''
     patients = Patient.query.all()
-    return render_template('index.html', patients = patients)
+    return render_template('register.html', patients = patients)
 
 
 @main.route('/recorder/<uname>')
@@ -46,7 +46,7 @@ def new_patient():
 
        new_patient.save_patient()
 
-       return redirect(url_for('main.index'))
+       return redirect(url_for('main.register'))
 
    title = 'New Patient'
    return render_template('new_patient.html',title = title, patient_form = form)
@@ -75,7 +75,7 @@ def new_record(id):
         new_record = Record(record = record, patient_id = id, docter= writer)
         new_record.save_record()
 
-        return redirect(url_for('main.index'))
+        return redirect(url_for('main.register'))
 
     title = 'New Record'
     return render_template('new_record.html', title = title, record_form = form)
@@ -153,4 +153,4 @@ def edit_patient(id):
 @main.route('/search')
 def search():
     patient = Patient.query.patient_query(request.args.get('query')).all()
-    return render_template('index.html',patient=patient)
+    return render_template('register.html',patient=patient)
