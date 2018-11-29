@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="static/index.css">
     <link rel="stylesheet" type="text/css" href="static/index.js">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/animate.css')}}">
 </head>
 
 <body>
@@ -33,17 +34,6 @@
                 <li>
                     <a href="/team">Team</a>
                 </li>
-                <!-- <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Works <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                    <li class="dropdown-header">Dropdown heading</li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                </ul>
-            </li> -->
 
                 <li>
                     <a href="/contact">Contact</a>
@@ -54,19 +44,34 @@
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
-                <span class="hamb-top"></span>
-                <span class="hamb-middle"></span>
-                <span class="hamb-bottom"></span>
-            </button>
-            <div class="container">
-            <div class="container">
-                <h1 class="text-center">About Us</h1>
-            </div>
+
+        <h1 class="animated fadeInLeft" style="text-align: center">About Us</h1>
+        <div class="animated slideInUp" style="background-color: #DEF4C6">
+            <div id="page-content-wrapper">
+                <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+                    <span class="hamb-top"></span>
+                    <span class="hamb-middle"></span>
+                    <span class="hamb-bottom"></span>
+                </button>
+
+
+
+                <h2>Preparing for change</h2>
+                <p>Our patient manager carries a massive impact for the future of research. The urgent need for
+                    heightened transparency and
+                    compliance under patient manager calls for a comprehensive research platform that
+                    integrates seamlessly into the research
+                    workflow.</p>
+                <h2>Research analytics<h2>
+                        <p>Our research analytics screen provides asset managers with a comprehensive analytics
+                            and reporting platform to track
+                            quantity and quality of research consumption</p>
+
             </div>
         </div>
-        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#page-content-wrapper -->
 
     </div>
     <!-- /#wrapper -->
@@ -103,7 +108,6 @@
     </script>
 
     <style>
-      
         .nav .open>a,
         .nav .open>a:hover,
         .nav .open>a:focus {
