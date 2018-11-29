@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import SubmitField,StringField,PasswordField,ValidationError,BooleanField
+from wtforms import SubmitField,StringField,PasswordField,ValidationError,BooleanField,IntegerField
 from wtforms.validators import Required,Email,EqualTo
 from ..models import User,Patient
 from wtforms import StringField, TextAreaField, SubmitField
@@ -15,8 +15,9 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Sign In')
 
 class PatientForm(FlaskForm):
-    patient = TextAreaField('Patient No.',validators=[Required()])
+    patient= IntegerField('Patient No.',validators=[Required()])
     submit = SubmitField('Submit')
+
 
 
 class RecordForm(FlaskForm):

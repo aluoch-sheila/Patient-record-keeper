@@ -148,3 +148,9 @@ def edit_patient(id):
                            new_patient = new_patient,
                            patient_form = form,
                            legend='Update Patient')
+
+
+@main.route('/search')
+def search():
+    patient = Patient.query.patient_query(request.args.get('query')).all()
+    return render_template('index.html',patient=patient)
